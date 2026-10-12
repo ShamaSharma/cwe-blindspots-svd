@@ -1,0 +1,12 @@
+# analysis + figures (CPU)
+numpy
+pandas
+scipy
+scikit-learn
+matplotlib
+# experiments (GPU)
+torch
+transformers
+peft
+accelerate
+bitsandbytes

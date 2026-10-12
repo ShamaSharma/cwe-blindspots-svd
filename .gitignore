@@ -1,0 +1,11 @@
+data/*.csv
+data/*.jsonl
+results/derived/
+seed_results/
+llm_results/
+adapter_*/
+*.pt
+*.bin
+*.safetensors
+__pycache__/
+.ipynb_checkpoints/
