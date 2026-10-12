@@ -2,7 +2,7 @@
 
 Code and results for the paper **"Why Do Vulnerability Detectors Fail? A Cross-Family Empirical Analysis of CWE-Level Detection Blind Spots"** (Shama, Sarika Jain).
 
-The package covers the PrimeVul Paired experiments: the LLM and transformer runs behind Table 3, all CWE-level analyses (RQ2/RQ3), and the scripts for Figures 6 and 8. Code for the classical ML and DL baselines will be added separately; their per-sample predictions are already included.
+The package covers the PrimeVul Paired experiments: the LLM and transformer runs behind Table 3, all CWE-level analyses, and the scripts for Figures 6 and 8. Code for the classical ML and DL baselines will be added separately; their per-sample predictions are already included.
 
 ## Repository layout
 
@@ -74,14 +74,14 @@ done; done
 python code/experiments/aggregate_seeds.py seed_results
 ```
 
-Settings (Section 3.5 of the paper): transformers use AdamW, lr 2e-5, effective batch 32, up to 10 epochs,
+Settings : transformers use AdamW, lr 2e-5, effective batch 32, up to 10 epochs,
 10% warmup, early stopping (patience 5), best validation AUC. LLM fine-tuning uses LoRA (r = 16, α = 32,
 dropout 0.05, q/v projections), lr 1e-4, up to 3 epochs, best validation AUC. LLM scores are the normalised
 probability of YES- vs. NO-variant answer tokens; functions are truncated to 1,500 tokens.
 
 ## Notes
 
-- The CWE-level analyses (RQ2/RQ3) use the original-run predictions in `results/rq2_predictions/`
+- The CWE-level analyses use the original-run predictions in `results/rq2_predictions/`
   (LLM ZS/FS-2 labels there were parsed from free-text answers). `cwe_deficit.py` also repeats the analysis
   with the Table 3 runs as a robustness check.
 - The transformer and fine-tuned LLM runs used a reload of the snapshot with 7,578 / 960 train / validation
